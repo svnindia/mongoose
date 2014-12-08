@@ -22,7 +22,6 @@ describe('Mongoose Bulk API wrapper', function() {
 
     var Omelette = db.model('gh-2399-1', omeletteSchema);
 
-    db.on('connected', function() {
     Omelette.
       initializeUnorderedBulkOp().
       insert({ topping: 'bacon' }).
@@ -37,6 +36,5 @@ describe('Mongoose Bulk API wrapper', function() {
           done();
         });
       });
-    });
   });
 });
